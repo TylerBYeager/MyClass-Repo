@@ -1,0 +1,41 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true,
+    // Add support for ES7 features like ** operators
+    //🔑 The exponentiation operator is an ES7 feature, so we add es2017 as an environment that we want ESLint to support, as follows:
+    "es2017": true
+  },
+  "rules": {
+  
+    // Don't allow assigning variables to undefined
+    //🔑 We add no-undef-init to the list of rules to disallow assigning variables to undefined, as shown in the following example:
+    "no-undef-init": "error",
+    "no-duplicate-case": "error",
+    "no-empty": "error",
+    "no-extra-semi": "error",
+    "no-func-assign": "error",
+    "no-irregular-whitespace": "error",
+    "no-unreachable": "error",
+    "curly": "error",
+    "dot-notation": "error",
+    "eqeqeq": "error",
+    "no-empty-function": "error",
+    "no-multi-spaces": "error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-trailing-spaces": "error",
+    "default-case": "error",
+    "no-fallthrough": "error",
+    "no-unused-vars": "error",
+    "no-use-before-define": "error",
+    "no-redeclare": "error",
+    "brace-style": "error",
+    "indent": ["error", 2],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "radix": "off"
+  }
+}

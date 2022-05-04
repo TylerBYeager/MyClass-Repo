@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Creating Indexes</title>
+  </head>
+
+  <body>
+    <h1>Open Your Developer Tools > Application > IndexedDB</h1>
+    <script>
+      const request = window.indexedDB.open("toDoList", 1);//if you change version # change object store
+
+      request.onupgradeneeded = ({ target }) => {
+        const db = target.result;
+        console.log("onupgradeneeded => executed");
+        const objectStore = db.createObjectStore("toDoList");
+        // ✔ The indexName is what you use to access the index when querying.
+        // ✔ The keyPath is the actual name of the "column."
+        objectStore.createIndex("indexName", "keyPath");
+
+        objectStore.createIndex("timestamps", "timestamp");//first - what do we want to name it? second is the query path - column name. 
+        objectStore.createIndex("nameRef", "keyName");//extra flags optional
+        
+      };
+
+      request.onsuccess = event => {
+        console.log(request.result);
+      };
+    </script>
+  </body>
+</html>
